@@ -65,3 +65,7 @@
 ### Association
 
 - belongs_to :buy
+
+
+tweets_controller         #new
+  tweetsフォルダ　　　　　　　new.html.erb　　　　ファイル名
