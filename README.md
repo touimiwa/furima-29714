@@ -6,8 +6,7 @@
 | --------------------- | -------- | ----------- |
 | nickname              | string   | null: false |
 | email                 | string   | null: false |
-| password              | string   | null: false |
-| password_confirmation | string   | null: false |
+| encrypted_password    | string   | null: false |
 | last_name             | string   | null: false |
 | first_name            | string   | null: false |
 | kanalast_name         | string   | null: false |
@@ -53,14 +52,15 @@
 
 ## delivery テーブル
 
-| Column         | Type    | Options     |
-| -------------- | ------- | ----------- |
-| postal_cord    | integer | null: false |
-| prefectures_id | integer | null: false |
-| municipality   | string  | null: false |
-| address        | string  | null: false |
-| building       | text    |             |
-| phone_number   | string  | null: false |
+| Column         | Type       | Options                        |
+| -------------- | ---------- | ------------------------------ |
+| postal_cord    | string     | null: false                    |
+| prefectures_id | integer    | null: false                    |
+| municipality   | string     | null: false                    |
+| address        | string     | null: false                    |
+| building       | text       |                                |
+| phone_number   | string     | null: false                    |
+| buy            | references | null: false, foreign_key: true |
 
 ### Association
 
