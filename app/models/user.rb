@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  has_many :items
+  
   validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]{6,}+\z/i }
 
   with_options presence: true do
