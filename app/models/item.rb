@@ -18,14 +18,16 @@ class Item < ApplicationRecord
     validates :charge_id
     validates :area_id
     validates :days_id 
+    validates :image
+    validates :price
    end
 
-  validates_inclusion_of :price, in: 300..9_999_999 
+   validates_inclusion_of :price, in: (300..9_999_999), format: { with: /^[0-9]+$/ } 
 
-  validates :category_id, numericality: { other_than: 1 } 
-  validates :condition_id, numericality: { other_than: 1 }
-  validates :charge_id, numericality: { other_than: 1 }
-  validates :area_id, numericality: { other_than: 0 }
-  validates :days_id, numericality: { other_than: 1 }
+   validates :category_id, numericality: { other_than: 0 } 
+   validates :condition_id, numericality: { other_than: 0 }
+   validates :charge_id, numericality: { other_than: 0 }
+   validates :area_id, numericality: { other_than: 0 }
+   validates :days_id, numericality: { other_than: 0 }
 end
 

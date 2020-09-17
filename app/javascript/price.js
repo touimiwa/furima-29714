@@ -1,32 +1,22 @@
-window.addEventListener('load', price);
+window.addEventListener('load', function(){
 
-function price(){
+  const inputPrice = document.getElementById("item-price");
+  const addTax = document.getElementById("add-tax-price");
+  const profit = document.getElementById("profit");
 
-   const priceInput = document.getElementById("item-price");
-   const add_tax = document.getElementById("add-tax-price");
-   const profit = document.getElementById("profit");
-
-     priceInput.addEventListener('keyup', () => {
-         const value = priceInput.value; 
-         
-       if (value >= 300 && value <= 9999999){
-         let fee = Math.floor(value * 0.1)
-         let gains = value - fee;
-         add_tax.textContent = fee;
-         profit.textContent = gains;
-     } else {
-       let fee = '-';
-       let gains = '-';
-       add_tax.textContent = fee;
-       profit.textContent = gains;
-     }
-   });
-  
-  }
+  inputPrice.addEventListener('input', function(){
+    const price = document.getElementById("item-price").value;
+    addTax.innerHTML = Math.floor(price * 0.1);
+    profit.innerHTML = Math.floor(price  * 0.9);
+  })
+});
  
 
-
-
+//  値を入力した時にイベントが発火する
+// →item-priceの値を取得する
+// 変数＝ document.getElementById("item-price").value;
+// 計算式を記述する
+// →計算結果を表示する
 
 
 
