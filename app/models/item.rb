@@ -24,10 +24,12 @@ class Item < ApplicationRecord
 
    validates_inclusion_of :price, in: (300..9_999_999), format: { with: /^[0-9]+$/ } 
 
-   validates :category_id, numericality: { other_than: 0 } 
-   validates :condition_id, numericality: { other_than: 0 }
-   validates :charge_id, numericality: { other_than: 0 }
-   validates :area_id, numericality: { other_than: 0 }
-   validates :days_id, numericality: { other_than: 0 }
+   with_options numericality: { other_than: 0 } do
+   validates :category_id 
+   validates :condition_id 
+   validates :charge_id 
+   validates :area_id 
+   validates :days_id
+   end
 end
 
