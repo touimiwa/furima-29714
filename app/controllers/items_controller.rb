@@ -29,7 +29,7 @@ class ItemsController < ApplicationController
     if @item.update(item_params)
       redirect_to root_path
     else
-      render :item_path
+      render :edit
     end
   end
 
