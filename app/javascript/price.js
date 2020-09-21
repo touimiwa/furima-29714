@@ -11,10 +11,3 @@ window.addEventListener('load', function(){
   })
 });
  
-//  値を入力した時にイベントが発火する
-// →item-priceの値を取得する
-// 変数＝ document.getElementById("item-price").value;
-// 計算式を記述する
-// →計算結果を表示する
-// "add-tax-price" = 販売手数料
-// "profit" = 販売利益
