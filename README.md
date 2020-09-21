@@ -26,7 +26,7 @@
 | description  | text       | null: false                    |
 | category_id  | integer    | null: false                    |
 | condition_id | integer    | null: false                    |
-| charges_id   | integer    | null: false                    |
+| charge_id   | integer    | null: false                    |
 | area_id      | integer    | null: false                    |
 | days_id      | integer    | null: false                    |
 | price        | integer    | null: false                    |
