@@ -5,7 +5,7 @@ RSpec.describe OrderAddress, type: :model do
     before do
       buyer = FactoryBot.build(:user)
       item2 = FactoryBot.build(:item)
-      @order_address = FactoryBot.build(:order_address, user_id:buyer.id, item_id:item2.id)
+      @order_address = FactoryBot.build(:order_address, user_id: buyer.id, item_id: item2.id)
     end
 
     it 'すべての値が正しく入力されていれば購入できること' do
@@ -24,7 +24,7 @@ RSpec.describe OrderAddress, type: :model do
     it 'area_idが空だと購入できないこと' do
       @order_address.area_id = 0
       @order_address.valid?
-      expect(@order_address.errors.full_messages).to include("Area must be other than 0")
+      expect(@order_address.errors.full_messages).to include('Area must be other than 0')
     end
     it 'municipalityが空だと購入できないこと' do
       @order_address.municipality = nil
@@ -44,13 +44,12 @@ RSpec.describe OrderAddress, type: :model do
     it 'postal_cordが半角のハイフンを含まないと購入できないこと' do
       @order_address.postal_cord = '1234567'
       @order_address.valid?
-      expect(@order_address.errors.full_messages).to include("Postal cord is invalid")
+      expect(@order_address.errors.full_messages).to include('Postal cord is invalid')
     end
     it 'phone_numberにはハイフンは不要で、11桁以内でないと購入できないこと' do
       @order_address.phone_number = '1111111111'
       @order_address.valid?
-      expect(@order_address.errors.full_messages).to include("Phone number is invalid")
+      expect(@order_address.errors.full_messages).to include('Phone number is invalid')
     end
   end
 end
-
