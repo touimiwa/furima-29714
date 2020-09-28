@@ -6,13 +6,14 @@ class OrderAddress
     validates :token
     validates :municipality
     validates :place
-    with_options format: { with: /\A\d{3}[-]\d{4}\z/ } do
-    validates :postal_cord, 
+    # with_options format: { with: /\A\d{3}[-]\d{4}\z/ } do
+    validates :postal_cord, format: { with: /\A\d{3}[-]\d{4}\z/ }
     end
-  end
-  
-  validates :area_id, numericality: { other_than: 0 } do
-  end
+  # end
+
+  # validates :area_id, numericality: { other_than: 0 } do
+  # end
+  validates :area_id, numericality: { other_than: 0 } 
 
   def save
     order = Order.create(user_id: user_id, item_id: item_id)
